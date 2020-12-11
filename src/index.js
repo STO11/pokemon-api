@@ -4,9 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { PokemonProvider } from './store/RootStateContext';
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <PokemonProvider>
+      <App />
+    </PokemonProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

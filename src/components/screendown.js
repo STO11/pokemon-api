@@ -1,9 +1,10 @@
 import React from 'react';
 import '../styles/screendown.css';
 
+
 function ScreenDown() {      
 
-    
+    //const store = useContext(PokemonContext);
     
     //console.log(fetchPokemon());
     return (
