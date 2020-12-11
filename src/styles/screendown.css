@@ -1,0 +1,18 @@
+.table, th, td{
+    width: 100%;
+    border: 1px solid black;
+    overflow: auto;
+    border-collapse: collapse;
+}
+
+.scroll-table{
+    overflow-y: scroll;
+    height: 300px;
+}
+.space-final-scroll{
+    height: 40%;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
