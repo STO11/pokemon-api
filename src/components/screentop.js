@@ -1,6 +1,6 @@
 import React from 'react';
   
-function ScreenTop() {        
+const ScreenTop = () => {        
     return (
         <div class="format-screen-one">
             <div class="screen-one">
@@ -10,5 +10,5 @@ function ScreenTop() {
     );
 }
 
-export default ScreenTop();
+export default ScreenTop;
  

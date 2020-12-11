@@ -5,6 +5,13 @@
 
 export function createPokemonStore() {
     return {
-        pokemons : []
+        pokemons : [],
+        pokeDetails : {},
+        setListPokemon(list) {
+            this.pokemons = list;
+        },
+        setPokeDetails(pokemon) {
+            this.pokeDetails = pokemon;
+        }
     }
 }

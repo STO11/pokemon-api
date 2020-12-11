@@ -1,72 +1,45 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/screendown.css';
+import {fetchPokemon} from  '../provider/api';
+import { useObserver } from 'mobx-react';
+import { usePokemonStore } from '../store/RootStateContext';
 
+const ScreenDown = () => {   
 
-function ScreenDown() {      
+    var loading = false;
+    const [pokemonsList, setpokemonsList] = useState([]);
 
-    //const store = useContext(PokemonContext);
-    
-    //console.log(fetchPokemon());
-    return (
+    const pokemonStore = usePokemonStore();
+
+    useEffect(async () => {
+        async function fetchData() { 
+            var pokemons = await fetchPokemon();
+            if(pokemons.results.length > 0){
+                setpokemonsList(pokemons.results);
+                pokemonStore.setListPokemon(pokemons.results);
+            }
+        }
+      
+        fetchData();
+    }, [pokemonsList]);
+
+    return useObserver(() =>
         <div class="format-screen-two">
+            {/* {JSON.stringify(pokemonsList)} */}
+            {/* {JSON.stringify(pokemonStore.pokemons)} */}
             <div class="container-screen-two">
                 <div class="stick-control"></div>
-                <div class="screen-two">
+                    <div class="screen-two">
+                        
                         <div class="scroll-table">
+                       
                             <table class="table">
                                 <thead>
-                                    <th>Image</th>
                                     <th>Pokemon</th>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td></td>
-                                        <td>Bubasauro</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>Bubasauro</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>Bubasauro</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>Bubasauro</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>Bubasauro</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>Bubasauro</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>Bubasauro</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>Bubasauro</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>Bubasauro</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>Bubasauro</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>Bubasauro</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>Bubasauro</td>
-                                    </tr>
+
+                                    {pokemonsList.length > 0 && pokemonsList.map(item => <tr key={item.name}> <td>{item.name}</td></tr>) }
                                 </tbody>
                             </table>
                             <div class="space-final-scroll"></div>
@@ -86,4 +59,4 @@ function ScreenDown() {
     );
 }
 
-export default ScreenDown();
+export default ScreenDown;
