@@ -1,7 +1,11 @@
 import React from 'react';
 import '../styles/screendown.css';
 
-function ScreenDown() {        
+function ScreenDown() {      
+
+    
+    
+    //console.log(fetchPokemon());
     return (
         <div class="format-screen-two">
             <div class="container-screen-two">
