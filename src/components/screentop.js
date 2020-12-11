@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {fetchPokemon} from  '../provider/api';
 import { useObserver } from 'mobx-react';
 import { usePokemonStore } from '../store/RootStateContext';
+import '../styles/screentop.css';
 
 import useScript from '../util/useScript';
 
@@ -9,38 +10,67 @@ const ScreenTop = () => {
     
     useScript('https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js');
 
-    const loading = true;
+    const [loading, setloading] =  useState(true);
 
     const [pokeDetails, setpokeDetails] = useState([]);
     
     const pokemonStore = usePokemonStore();
 
     useEffect(async () => {
-        // async function fetchData() { 
-        //     var pokemons = await fetchPokemon();
-        //     if(pokemons.results.length > 0){
-        //         setpokemonsList(pokemons.results);
-        //         pokemonStore.setListPokemon(pokemons.results);
-        //     }
-        // }
-        // fetchData();
-       
 
-
-        console.log(pokemonStore.pokeDetails);
-
+        if(pokemonStore.pokeDetails?.id) {
+            setloading(false);
+        }
     });
 
     //console.log(pokemonStore.pokeDetails);
 
-    return useObserver(() => 
-        <div class="format-screen-one">
+    return useObserver(() => {
+        //console.log(pokemonStore.pokeDetails);
+
+        return <div class="format-screen-one">
             <div class="screen-one">
-{ loading && <lottie-player src="https://assets9.lottiefiles.com/private_files/lf30_rBOODA.json"  background="transparent"  speed="1"  loop  autoplay></lottie-player> }
-                { JSON.stringify(pokemonStore.pokeDetails) }
+           
+            <div class="scroll-top">
+        { loading && <lottie-player src="https://assets9.lottiefiles.com/private_files/lf30_rBOODA.json"  background="transparent"  speed="1"  loop  autoplay></lottie-player> }
+    
+                    
+                    { !loading && 
+                    <div class="detals-display">  
+                    { pokemonStore.pokeDetails?.id &&
+                        <div class="footer">
+                            <div class="abilitys">
+                                <span>#{pokemonStore.pokeDetails?.id}</span>
+                                <span>{pokemonStore.pokeDetails?.name}</span>
+                                <span>Weight: {pokemonStore.pokeDetails?.weight}</span>
+                                <span>Height: {pokemonStore.pokeDetails?.height}</span>
+                            </div>
+                            <div class="abilitys">
+                                <span>HP { pokemonStore.pokeDetails?.stats && pokemonStore.pokeDetails?.stats[0]?.base_stat}</span>
+                                <span>Attack { pokemonStore.pokeDetails?.stats && pokemonStore.pokeDetails?.stats[1]?.base_stat}</span>
+                                <span>Defesa { pokemonStore.pokeDetails?.stats && pokemonStore.pokeDetails?.stats[2]?.base_stat}</span>
+                                <span>Speed { pokemonStore.pokeDetails?.stats && pokemonStore.pokeDetails?.stats[3]?.base_stat}</span>
+                            </div>
+                        </div>
+                    }
+
+                     
+
+                        <div class="description"></div>
+                        <div class="imgPoke">
+                            { pokemonStore.pokeDetails?.sprites?.front_default && <img class="img-details" src={pokemonStore.pokeDetails?.sprites?.front_default} /> }
+                        </div>
+                      
+                    </div>
+                    }
+
+                    
+                    
+
+                </div>
             </div>
         </div>
-    );
+    });
 }
 
 export default ScreenTop;

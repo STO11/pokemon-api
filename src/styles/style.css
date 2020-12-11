@@ -6,9 +6,22 @@
 }
 
 body{
-    background-image: url('../bkpokemon.svg');
+    background-image: url('../bkpokemon2.svg');
     background-repeat: repeat-x;
     background-size: 1920px 1080px;
+    background-size: cover;
+}
+
+
+@media (max-width: 1024px) 
+{
+    .stick-control, .buttons-control, .detals-display
+    {
+        display: none !important;
+    }
+    .screen-two {
+        width: 90% !important;
+    }
 }
 
 .format-screen-one {
@@ -91,7 +104,7 @@ body{
     border: 1px solid black;
 }
 
-.buttons {
+.buttons-control {
     border: 0px solid black;
     display: flex;
     align-items: center;

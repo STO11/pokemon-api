@@ -6,3 +6,7 @@ export function fetchPokemon() {
     // .then(pokemons => pokemons);
   
 }
+
+export function fetchDetailsPokemon(url) {
+    return fetch(url).then(response => response.json());
+}
