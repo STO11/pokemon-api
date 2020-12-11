@@ -8,7 +8,6 @@ const ScreenDown = () => {
 
     var loading = false;
     const [pokemonsList, setpokemonsList] = useState([]);
-
     const pokemonStore = usePokemonStore();
 
     useEffect(async () => {
@@ -19,7 +18,6 @@ const ScreenDown = () => {
                 pokemonStore.setListPokemon(pokemons.results);
             }
         }
-      
         fetchData();
     }, [pokemonsList]);
 
