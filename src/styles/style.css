@@ -5,6 +5,12 @@
     margin: auto;
 }
 
+body{
+    background-image: url('../bkpokemon.svg');
+    background-repeat: repeat-x;
+    background-size: 1920px 1080px;
+}
+
 .format-screen-one {
     border: 0px solid black;
     /* height: 60%; */

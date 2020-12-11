@@ -6,6 +6,24 @@
     font-weight: bold;
     font-size: 18px;
     cursor: pointer;
+    padding: 10px;
+}
+
+td:hover {
+    background-color: #ffa;
+}
+
+td:hover::after,
+th:hover::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  opacity: 0.5;
+  left: 0;
+  top: -5000px;
+  height: 10000px;
+  width: 100%;
+  z-index: -1;
 }
 
 .scroll-table{

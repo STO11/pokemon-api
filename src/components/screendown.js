@@ -6,7 +6,6 @@ import { usePokemonStore } from '../store/RootStateContext';
 
 const ScreenDown = () => {   
 
-    var loading = false;
     const [pokemonsList, setpokemonsList] = useState([]);
     const pokemonStore = usePokemonStore();
 
@@ -21,7 +20,11 @@ const ScreenDown = () => {
         fetchData();
     }, [pokemonsList]);
 
-    return useObserver(() =>
+    const setDetals = (pokemon) => {
+        pokemonStore.setPokeDetails(pokemon);
+    }
+
+    return (
         <div class="format-screen-two">
             {/* {JSON.stringify(pokemonsList)} */}
             {/* {JSON.stringify(pokemonStore.pokemons)} */}
@@ -36,8 +39,7 @@ const ScreenDown = () => {
                                     <th>Pokemon</th>
                                 </thead>
                                 <tbody>
-
-                                    {pokemonsList.length > 0 && pokemonsList.map(item => <tr key={item.name}> <td>{item.name}</td></tr>) }
+                                    {pokemonsList.length > 0 && pokemonsList.map(item => <tr onClick={() => setDetals(item)} key={item.name}> <td>{item.name}</td></tr>) }
                                 </tbody>
                             </table>
                             <div class="space-final-scroll"></div>
