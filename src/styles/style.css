@@ -59,16 +59,18 @@ body{
 }
 
 
-@media (max-width: 1024px) and (min-width: 640px)
+@media (max-width: 768px) and (max-height: 1024px)
 {
     .imgPoke {
-        margin-right: -10% !important;
+        margin-right: -2% !important;
+        margin-top: 10% !important;
     }
     .container{
         width: 90% !important;
     }
     .img-details{
-        width: 300px !important;
+        width: 200px !important;
+        height: 200px !important;
     }
 
     .screen-one{
@@ -80,12 +82,46 @@ body{
      }
 
      .footer{
-        margin-top: 250px !important;
+        margin-top: 285px !important;
         height: 30px;
+        font-size: 10px;
+    }
+    .footer > div > span {
         font-size: 10px;
     }
 }
 
+@media (max-width: 1024px) and (max-height: 1366px)
+{
+    .imgPoke {
+        margin-right: -2% !important;
+        margin-top: 10% !important;
+    }
+    .container{
+        width: 90% !important;
+    }
+    .img-details{
+        width: 200px !important;
+        height: 200px !important;
+    }
+
+    .screen-one{
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        /* display: flex; */
+        flex-direction: column;
+     }
+
+     .footer{
+        margin-top: 285px !important;
+        height: 30px;
+        font-size: 10px;
+    }
+    .footer > div > span {
+        font-size: 10px;
+    }
+}
 
 .format-screen-one {
     border: 0px solid black;
@@ -131,7 +167,7 @@ body{
 
 .screen-one {
     border: 10px solid #d7dadb;
-    height: 60%;
+    /* height: 60%; */
     width: 70%;
     border-radius: 3px;
     background-color: white;
