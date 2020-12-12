@@ -5,7 +5,7 @@
     margin: auto;
 }
 
-body{
+body {
     background-image: url('../bkpokemon2.svg');
     background-repeat: repeat-x;
     background-size: 1920px 1080px;
@@ -13,112 +13,123 @@ body{
 }
 
 
-@media (max-width: 640px) 
-{
-    .stick-control, .buttons-control
-    {
+@media (max-width: 640px) {
+
+    .stick-control,
+    .buttons-control {
         display: none !important;
     }
+
     .screen-two {
         width: 90% !important;
     }
-    .footer{
+
+    .footer {
         margin-top: 10px !important;
         width: 90% !important;
         height: 40px !important;
         background-color: transparent !important;
     }
+
     .abilitys {
         flex-direction: column;
     }
-    .abilitys > span{
+
+    .abilitys>span {
         font-size: 13px !important;
     }
+
     .detals-display {
         display: block;
         background-image: url('') !important;
     }
+
     .imgPoke {
         /* margin-top: 0px !important; 
         margin: auto;  */
         margin-top: 40px !important;
         margin-right: 0px !important;
     }
-    .img-details{
+
+    .img-details {
         object-fit: none;
         width: 100%;
         height: 100%;
-     }
+    }
 
-     .screen-one{
+    .screen-one {
         justify-content: center;
         align-items: center;
         align-content: center;
         flex-direction: column;
-     }
+    }
 }
 
 
-@media (width: 768px) and (height: 1024px)
-{
+@media (width: 768px) and (height: 1024px) {
     .imgPoke {
         margin-right: -2% !important;
         margin-top: 10% !important;
     }
-    .container{
+
+    .container {
         width: 90% !important;
     }
-    .img-details{
+
+    .img-details {
         width: 200px !important;
         height: 200px !important;
     }
 
-    .screen-one{
+    .screen-one {
         justify-content: center;
         align-items: center;
         align-content: center;
         /* display: flex; */
         flex-direction: column;
-     }
+    }
 
-     .footer{
+    .footer {
         margin-top: 285px !important;
         height: 30px;
         font-size: 10px;
     }
-    .footer > div > span {
+
+    .footer>div>span {
         font-size: 13px;
     }
 }
 
-@media (width: 1024px) and (height: 1366px)
-{
+@media (width: 1024px) and (height: 1366px) {
     .imgPoke {
         margin-right: -2% !important;
         margin-top: 10% !important;
     }
-    .container{
+
+    .container {
         width: 90% !important;
     }
-    .img-details{
+
+    .img-details {
         width: 200px !important;
         height: 200px !important;
     }
 
-    .screen-one{
+    .screen-one {
         justify-content: center;
         align-items: center;
         align-content: center;
         /* display: flex; */
         flex-direction: column;
-     }
+    }
 
-     .footer{
+    .footer {
         margin-top: 285px !important;
         height: 30px;
         font-size: 10px;
     }
-    .footer > div > span {
+
+    .footer>div>span {
         font-size: 10px;
     }
 }

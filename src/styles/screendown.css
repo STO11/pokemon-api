@@ -1,4 +1,6 @@
-.table, th, td{
+.table,
+th,
+td {
     width: 100%;
     border: 1px solid black;
     overflow: auto;
@@ -15,22 +17,23 @@ td:hover {
 
 td:hover::after,
 th:hover::after {
-  content: "";
-  position: absolute;
-  background-color: black;
-  opacity: 0.5;
-  left: 0;
-  top: -5000px;
-  height: 10000px;
-  width: 100%;
-  z-index: -1;
+    content: "";
+    position: absolute;
+    background-color: black;
+    opacity: 0.5;
+    left: 0;
+    top: -5000px;
+    height: 10000px;
+    width: 100%;
+    z-index: -1;
 }
 
-.scroll-table{
+.scroll-table {
     overflow-y: scroll;
     height: 300px;
 }
-.space-final-scroll{
+
+.space-final-scroll {
     height: 40%;
 }
 
