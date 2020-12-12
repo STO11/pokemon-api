@@ -7,7 +7,10 @@ const ScreenDown = () => {
 
     const [pokemonsList, setpokemonsList] = useState([]);
     const pokemonStore = usePokemonStore();
-    useEffect(async () => {
+    
+  
+
+    useEffect(() => {
         async function fetchData() { 
             var pokemons = await fetchPokemon();
             if(pokemons.results.length > 0){
@@ -16,11 +19,14 @@ const ScreenDown = () => {
             }
         }
         fetchData();
-    }); 
+    },[pokemonsList, pokemonStore, setpokemonsList]); 
+        
+        
+
     async function detalsPokemon(pokemon) { 
-        var pokemon = await fetchDetailsPokemon(pokemon.url);
-        if(pokemon){
-            pokemonStore.setPokeDetails(pokemon);
+        var pokemonDetals = await fetchDetailsPokemon(pokemon.url);
+        if(pokemonDetals){
+            pokemonStore.setPokeDetails(pokemonDetals);
         }
     }
     
@@ -37,7 +43,7 @@ const ScreenDown = () => {
                                 <th>Choose a Pokemon</th>
                             </thead>
                             <tbody>
-                                {pokemonsList.length > 0 && pokemonsList.map(item => <tr onClick={() => detalsPokemon(item)} key={item.name}> <td>{item.name}</td></tr>) }
+                                {pokemonsList.length > 0 && pokemonsList.map(item => <tr onClick={() => detalsPokemon(item)} key={item.name}> <td>{item.name.toUpperCase()}</td></tr>) }
                             </tbody>
                         </table>
                         <div class="space-final-scroll"></div>

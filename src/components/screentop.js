@@ -31,7 +31,7 @@ const ScreenTop = () => {
                                     <div class="abilitys">
                                         <span><span class="description-stats">HP</span> { pokemonStore.pokeDetails?.stats && pokemonStore.pokeDetails?.stats[0]?.base_stat}</span>
                                         <span><span class="description-stats">Attack</span> { pokemonStore.pokeDetails?.stats && pokemonStore.pokeDetails?.stats[1]?.base_stat}</span>
-                                        <span><span class="description-stats">Defesa</span> { pokemonStore.pokeDetails?.stats && pokemonStore.pokeDetails?.stats[2]?.base_stat}</span>
+                                        <span><span class="description-stats">Defense</span> { pokemonStore.pokeDetails?.stats && pokemonStore.pokeDetails?.stats[2]?.base_stat}</span>
                                         <span><span class="description-stats">Speed</span> { pokemonStore.pokeDetails?.stats && pokemonStore.pokeDetails?.stats[3]?.base_stat}</span>
                                     </div>
                                 </div>

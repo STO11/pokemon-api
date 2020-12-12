@@ -41,7 +41,7 @@ body {
 
     .detals-display {
         display: block;
-        background-image: url('') !important;
+        /* background-image: url('') !important; */
     }
 
     .imgPoke {
