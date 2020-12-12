@@ -41,15 +41,15 @@ const ScreenTop = () => {
                         <div class="footer">
                             <div class="abilitys">
                                 <span>#{pokemonStore.pokeDetails?.id}</span>
-                                <span>{pokemonStore.pokeDetails?.name}</span>
-                                <span>Weight: {pokemonStore.pokeDetails?.weight}</span>
-                                <span>Height: {pokemonStore.pokeDetails?.height}</span>
+                                <span><span class="description-stats">Name</span> {pokemonStore.pokeDetails?.name.toUpperCase()}</span>
+                                <span><span class="description-stats">Weight</span> {pokemonStore.pokeDetails?.weight}</span>
+                                <span><span class="description-stats">Height</span> {pokemonStore.pokeDetails?.height}</span>
                             </div>
                             <div class="abilitys">
-                                <span>HP { pokemonStore.pokeDetails?.stats && pokemonStore.pokeDetails?.stats[0]?.base_stat}</span>
-                                <span>Attack { pokemonStore.pokeDetails?.stats && pokemonStore.pokeDetails?.stats[1]?.base_stat}</span>
-                                <span>Defesa { pokemonStore.pokeDetails?.stats && pokemonStore.pokeDetails?.stats[2]?.base_stat}</span>
-                                <span>Speed { pokemonStore.pokeDetails?.stats && pokemonStore.pokeDetails?.stats[3]?.base_stat}</span>
+                                <span><span class="description-stats">HP</span> { pokemonStore.pokeDetails?.stats && pokemonStore.pokeDetails?.stats[0]?.base_stat}</span>
+                                <span><span class="description-stats">Attack</span> { pokemonStore.pokeDetails?.stats && pokemonStore.pokeDetails?.stats[1]?.base_stat}</span>
+                                <span><span class="description-stats">Defesa</span> { pokemonStore.pokeDetails?.stats && pokemonStore.pokeDetails?.stats[2]?.base_stat}</span>
+                                <span><span class="description-stats">Speed</span> { pokemonStore.pokeDetails?.stats && pokemonStore.pokeDetails?.stats[3]?.base_stat}</span>
                             </div>
                         </div>
                     }

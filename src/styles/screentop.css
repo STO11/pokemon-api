@@ -6,7 +6,7 @@
 }
 
 .scroll-top{
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     height: 350px;
 }
 .space-final-scroll{
@@ -66,3 +66,7 @@
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   }
 
+
+  .description-stats{
+    font-size: 10px;
+  }
